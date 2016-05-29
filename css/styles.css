@@ -1,0 +1,361 @@
+
+body {
+	color:#333;
+	font-family: 'Titillium Web', sans-serif;
+	 overflow-x:hidden;
+	 overflow-y: hidden;
+}
+
+a {
+	color:rgb(255,255,255);
+	
+}
+a:hover, a:focus {
+	color:rgb(0,255,0);
+	text-decoration:underline;
+}
+figure {
+	left:0px;
+    right:0px;
+	position: absolute;
+	width:100%;
+    height:auto;
+	margin:0px;
+	bottom: 0px;
+	
+	
+	cursor:grabbing;
+	
+}
+
+
+/* controls */
+.controls, .controls li {
+	padding:0;
+	margin:0;
+	display:block;
+	
+}
+.controls {
+	display:block;
+	list-style-type:none;
+	overflow:hidden;
+	background:transperant;
+
+    
+}
+.controls li {
+	display:inline;
+	width:30px;;
+	margin-left:1px;
+	
+}
+.controls li:first-child {
+	margin-left:0;
+}
+.controls .progress {
+	width:50%;
+	cursor:pointer;
+}
+
+.controls progress {
+	display:block;
+    height:10px;
+	width:100%;
+	margin-bottom:10px;
+	 
+    
+    
+}
+progress[value]::-webkit-progress-value {
+  
+    background-color:rgba(255,255,255,.80);
+    border-radius: 1px; 
+	
+    
+}
+progress[value]::-webkit-progress-bar {
+  background-color: rgba(0,0,0,.8);
+  border-radius: 1px;
+  
+  
+  
+  
+}
+progress[value] {
+  /* Reset the default appearance */
+  -webkit-appearance: none;
+  background-color: #eee;
+}
+.controls progress span {
+	width:0%;
+	height:100%;
+	display:inline-block;
+	background-color:#ff0000;	
+    
+}
+
+
+:-webkit-full-screen {
+	background-color:transparent;
+}
+
+
+
+
+.sphere-video-controls
+{   position:absolute;
+	display:inline;
+	background-color:rgba(0,0,0,.3);
+    bottom:0px;
+	height:70px;
+	width:100%;
+	cursor:pointer;
+	
+}
+.fa-volume-off
+{color:white;
+text-shadow: 0px 0px 5px #ffffff;	
+}
+.fa-play-circle
+{color:white;
+	text-shadow: 0px 0px 1px #ffffff;
+	
+}
+.fa-arrows-alt
+{
+
+color:white;
+text-shadow: 0px 0px 10px #ffffff;
+}
+.fa-play-circle:hover
+{   
+	color:white;
+	text-shadow: 0px 0px 10px #ffffff;
+	-webkit-transition: all 0.4s ease;
+-moz-transition: all 0.4s ease;
+-o-transition: all 0.4s ease;
+-ms-transition: all 0.4s ease;
+}
+.fa-arrows-alt:hover
+{
+	
+text-shadow: 0px 0px 1px #ffffff;
+-webkit-transition: all 0.3s ease;
+-moz-transition: all 0.3s ease;
+-o-transition: all 0.3s ease;
+-ms-transition: all 0.3s ease;
+}
+.fa-folder-open
+{
+	color:lightblue;
+	text-shadow: 0px 0px 2px #888;
+}
+.fa-folder-open:hover
+{
+	color:white;
+	
+}
+.fa-pause-circle
+{
+	color:white;
+	
+}
+.fa-pause-circle:hover
+{
+color:white;
+text-shadow: 0px 0px 10px #ffffff;
+-webkit-transition: all 0.4s ease;
+-moz-transition: all 0.4s ease;
+-o-transition: all 0.4s ease;
+-ms-transition: all 0.4s ease;
+}
+
+.fa-info-circle
+{
+	
+	text-shadow: 0px 0px 2px #888;
+	
+}
+.fa-info-circle:hover
+{
+	color:white;
+	text-shadow: 0px 0px 8px white;
+	cursor:pointer;
+	-webkit-transition: all 0.4s ease;
+-moz-transition: all 0.4s ease;
+-o-transition: all 0.4s ease;
+-ms-transition: all 0.4s ease;
+}
+.ytp-autohide .ytp-webgl-spherical-control, .ytp-hide-info-bar .ytp-webgl-spherical-control {
+      
+	top: 12px;
+	width:100px;
+	height:100px;
+    -moz-transition: top .1s cubic-bezier(0.4,0.0,1,1),opacity .1s cubic-bezier(0.4,0.0,1,1);
+    -webkit-transition: top .1s cubic-bezier(0.4,0.0,1,1),opacity .1s cubic-bezier(0.4,0.0,1,1);
+    transition: top .1s cubic-bezier(0.4,0.0,1,1),opacity .1s cubic-bezier(0.4,0.0,1,1);
+}
+.ytp-webgl-spherical-control {
+    
+	position: absolute;
+    opacity: .6;
+    cursor:pointer;
+	width:100px;
+	height:100px;
+	display:inline;
+    left:10px;
+    -moz-transition: top .25s cubic-bezier(0.0,0.0,0.2,1),opacity .25s cubic-bezier(0.0,0.0,0.2,1);
+    -webkit-transition: top .25s cubic-bezier(0.0,0.0,0.2,1),opacity .25s cubic-bezier(0.0,0.0,0.2,1);
+    transition: top .25s cubic-bezier(0.0,0.0,0.2,1),opacity .25s cubic-bezier(0.0,0.0,0.2,1);
+    outline: none;
+}
+
+
+  .button{
+    fill:  rgba(7, 153, 249,0.5);
+    stroke:  white;
+    stroke-miterlimit:	6;
+    stroke-linecap:  round;
+	stroke-width:  2;
+  }
+  .button:hover{
+    fill:  rgba(7, 153, 249,1);
+    stroke-width:  4;
+  }
+  .plus-minus{
+    fill:  #fff;
+    pointer-events: none;
+  }
+  
+
+
+input#fileBrowser {
+  display: none;
+}
+
+/*the slider background*/
+
+.sphere-volume-control {
+width:50px;
+height:8px;
+background-color: rgba(19, 19, 19, 0.9);
+border:1px solid rgba(255,255,255,0.3);
+position:relative;
+margin-left:5px;
+padding:0 10px;
+display:inline-block;
+border-radius: 1px;
+cursor:pointer;
+}
+
+/*Style for the slider button*/
+.ui-slider-handle {
+outline: none;
+width:15px;
+height:15px;
+position:absolute;
+top:-2px;
+margin-left:-12px;
+z-index:200;
+background-color:white;
+border-radius:12px;
+box-shadow: 0 0 12px #8888;
+-webkit-transition: box-shadow 0.3s ease;
+cursor:pointer;
+}
+.ui-slider-handle:hover {
+	box-shadow: 0 0 14px #ffffff;
+	
+}
+
+/*This is the fill bar colour*/
+.ui-widget-header {
+background: white;
+box-shadow: 0 0 3px white;
+height:6px;
+left:1px;
+top:1px;
+position:absolute;
+}
+#sphere-mute-btn
+{   
+   display:inline-block;
+   
+	width:20px;
+	height:20px;;
+	color:black;
+	background:url(../images/volume.png) no-repeat;
+	background-position:0 -50px;
+}
+#sphere-current-duration
+{
+	display:inline-block;
+	color:white;
+	
+	 
+}
+.controls #sphere-total-duration
+{
+	display:inline-table;
+	color:white;
+}
+.sphere-browsefile
+{
+margin-left:30px;
+}
+#sphere-playpause-control
+{
+	display:inline-block;
+}
+#sphere-fullscreen
+{
+	display:inline-block;
+}
+
+
+#sphere-header
+{
+	position:absolute;
+    z-index:5;
+    background:#942911;
+	 position: relative;
+    float:right;
+	top:-8px;
+	left:0px;
+    width : 100%;
+    height : 40px;
+	color:white;
+	background-color:rgba(0,0,0,.2);
+	border-radius: 2px;
+}
+#sphere-about
+{
+	 float:right;
+	 margin-top:5px;
+	 margin-right:10px;
+	 
+}
+#sphere_about_popup
+{
+	border-radius: 6px;
+    box-shadow: 0 0 4px white;
+	border: rgba(255,255,255,.15) solid 8px;
+    background-clip: padding-box;
+	padding:10px;
+	background-color:rgba(0,0,0,.6);
+	color:white;
+	 -webkit-transform: scale(0.8);
+       -moz-transform: scale(0.8);
+        -ms-transform: scale(0.8);
+            transform: scale(0.8);
+
+}
+.popup_visible #sphere_about_popup
+{
+	-webkit-transform: scale(1);
+       -moz-transform: scale(1);
+        -ms-transform: scale(1);
+            transform: scale(1);
+
+}
