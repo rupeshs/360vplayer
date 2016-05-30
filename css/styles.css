@@ -2,13 +2,12 @@
 body {
 	color:#333;
 	font-family: 'Titillium Web', sans-serif;
-	 overflow-x:hidden;
-	 overflow-y: hidden;
-	-webkit-user-select: none;  
-  -moz-user-select: none;    
-  -ms-user-select: none;      
-  user-select: none;
-}
+	 -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 
 a {
 	color:rgb(255,255,255);
@@ -66,7 +65,7 @@ figure {
 	display:block;
     height:10px;
 	width:100%;
-	margin-bottom:10px;
+	margin-bottom:-5px;
 	 
     
     
@@ -115,10 +114,12 @@ progress[value] {
 	height:70px;
 	width:100%;
 	cursor:pointer;
-  -webkit-user-select: none;  
-  -moz-user-select: none;    
-  -ms-user-select: none;      
-  user-select: none;
+ -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 	
 }
 .fa-volume-off
