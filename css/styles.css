@@ -115,6 +115,10 @@ progress[value] {
 	height:70px;
 	width:100%;
 	cursor:pointer;
+  -webkit-user-select: none;  
+  -moz-user-select: none;    
+  -ms-user-select: none;      
+  user-select: none;
 	
 }
 .fa-volume-off
