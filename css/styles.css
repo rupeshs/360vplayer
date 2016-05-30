@@ -4,6 +4,10 @@ body {
 	font-family: 'Titillium Web', sans-serif;
 	 overflow-x:hidden;
 	 overflow-y: hidden;
+	 -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  user-select: none; 
 }
 
 a {
@@ -34,10 +38,7 @@ figure {
 	padding:0;
 	margin:0;
 	display:block;
-	-webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  user-select: none; 
+	
 }
 .controls {
 	display:block;
