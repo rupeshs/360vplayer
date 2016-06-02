@@ -27,7 +27,7 @@ var videoContainer;
    	stop = document.getElementById('stop');
    	mute = document.getElementById('sphere-mute-btn');
    	
-   	progress = document.getElementById('progress');
+   	seekbar = document.getElementById('sphere-seek-ctrl');
     progressBar = document.getElementById('progress-bar');
    	fullscreen = document.getElementById('sphere-fullscreen');
     timelabel=document.getElementById("sphere-current-duration");
@@ -35,8 +35,8 @@ var videoContainer;
 	
 	videoContainer = document.getElementById('videoContainer');
 	videoControls = document.getElementById('video-controls');
-  
-	  
+    seekbar.addEventListener("change",vidSeek,false);
+	video.addEventListener("timeupdate",seektimeupdate,false);  
 	  }
 
  
@@ -113,8 +113,12 @@ var videoContainer;
    	if (document.addEventListener) {
    		// Wait for the video's meta data to be loaded, then set the progress bar's max value to the duration of the video
    		video.addEventListener('loadedmetadata', function() {
-   			progress.setAttribute('max', video.duration);
-		    progress.setAttribute('value', 0);
+   		
+			
+			//progress.setAttribute('max', video.duration);
+			
+		    //progress.setAttribute('value', 10);
+			//alert(progress.getAttribute('value'));
 			timelabel.innerHTML=secondsToTime(0);
 		   timeduration.innerHTML="/ "+secondsToTime(video.duration);
 			if($('#sphere-playpause-control').find($(".fa")).hasClass('fa-pause-circle'))
@@ -187,7 +191,7 @@ var videoContainer;
    		});
 
    		// As the video is playing, update the progress bar
-   		video.addEventListener('timeupdate', function() {
+   		/*video.addEventListener('timeupdate', function() {
         
 		
 		//
@@ -195,15 +199,16 @@ var videoContainer;
         if (!progress.getAttribute('max')) progress.setAttribute('max', video.duration);
         timelabel.innerHTML=secondsToTime(video.currentTime);
 		timeduration.innerHTML="/ "+secondsToTime(video.duration);
-		progress.value = video.currentTime;
-        progressBar.style.width = Math.floor((video.currentTime / video.duration) * 100) + '%';
+		//progress.value = video.currentTime;
+		progress.setAttribute('value',video.currentTime);
+      //  progressBar.style.width = Math.floor((video.currentTime / video.duration) * 100) + '%';
    		});
 
       // React to the user clicking within the progress bar
       progress.addEventListener('click', function(e) {
         var pos = (e.pageX  - this.offsetLeft) / this.offsetWidth;
         video.currentTime = pos * video.duration;
-      });
+		});*/
 
    		// Listen for fullscreen change events (from other controls, e.g. right clicking on the video itself)
    		document.addEventListener('fullscreenchange', function(e) {
@@ -220,7 +225,10 @@ var videoContainer;
    		});
    	}
   }
-
+function vidSeek(){
+	var seekto = video.duration * (seekbar.value / 100);
+	video.currentTime = seekto;
+}
 
 // Find the right method, call on correct element
 function launchIntoFullscreen(element) {
@@ -271,3 +279,30 @@ function exitFullscreen() {
    }
    
 
+function seektimeupdate(){
+
+	timelabel.innerHTML=secondsToTime(video.currentTime);
+	timeduration.innerHTML="/ "+secondsToTime(video.duration);
+
+	var nt = video.currentTime * (100 / video.duration);
+	seekbar.value = nt;
+	$('.range').css(
+      'background',
+      'linear-gradient(to right, #cc181e 0%, #cc181e ' + seekbar.value + '%, #777 ' + seekbar.value + '%, #777 ' 
+    );
+}
+ 
+   $('.wrap').bind('focusin mouseover mousedown hover', function() {
+    window.clearTimeout(timeout);
+    $(this).addClass('hover');
+  });
+  $('.wrap').bind('focusout mouseout mouseup', function() {
+    window.clearTimeout(timeout);
+    timeout = setTimeout(function(){removeHoverClass();}, 1000);
+  });
+  function removeHoverClass() {
+    if (!$('.wrap').is(":hover")) {
+      $('.wrap').removeClass('hover');
+    }
+  }
+  

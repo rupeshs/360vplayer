@@ -44,7 +44,7 @@ $(document).ready(function () {
 	container = $('#videoContainer');
 	
 	initControls();
-	loadVideo("spacex-rocket-landing.mp4");
+	loadVideo("video/spacex-rocket-landing.mp4");
 
 	updateFcts.push(
 		function (delta, now) {
