@@ -288,7 +288,7 @@ function seektimeupdate(){
 	seekbar.value = nt;
 	$('.range').css(
       'background',
-      'linear-gradient(to right, #cc181e 0%, #cc181e ' + seekbar.value + '%, #777 ' + seekbar.value + '%, #777 ' 
+      'linear-gradient(to right, rgb(36, 199, 84) 0%, rgb(85, 206, 65) ' + seekbar.value + '%, #777 ' + seekbar.value + '%, #777 ' 
     );
 }
  

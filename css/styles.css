@@ -29,16 +29,35 @@ figure {
     height:auto;
 	margin:0px;
 	bottom: 0px;
-	
-	
 	cursor:grabbing;
 	
 }
 
 
 /* controls */
+
+.sphere-video-controls
+{  
+	position:absolute;
+	display:inline;
+	background-color:rgba(0,0,0,.2);
+    bottom:0px;
+	height:80px;
+	width:100%;
+	cursor:pointer;
+	
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+	outline: none;
+	
+}
 .controls, .controls li {
 	padding:0;
+	padding-botton:10px;
 	margin:0;
 	display:block;
 	
@@ -51,7 +70,7 @@ figure {
 
     
 }
-.controls li {
+.sphere-video-controls li {
 	display:inline;
 	width:30px;;
 	margin-left:1px;
@@ -60,48 +79,6 @@ figure {
 .controls li:first-child {
 	margin-left:0;
 }
-.controls .progress {
-	width:50%;
-	cursor:pointer;
-}
-
-.controls progress {
-	display:block;
-    height:10px;
-	width:100%;
-	margin-bottom:-5px;
-	 
-    
-    
-}
-progress[value]::-webkit-progress-value {
-  
-    background-color:rgba(255,255,255,.80);
-    border-radius: 1px; 
-	
-    
-}
-progress[value]::-webkit-progress-bar {
-  background-color: rgba(0,0,0,.8);
-  border-radius: 1px;
-  
-  
-  
-  
-}
-progress[value] {
-  /* Reset the default appearance */
-  -webkit-appearance: none;
-  background-color: #eee;
-}
-.controls progress span {
-	width:0%;
-	height:100%;
-	display:inline-block;
-	background-color:#ff0000;	
-    
-}
-
 
 :-webkit-full-screen {
 	background-color:transparent;
@@ -110,23 +87,7 @@ progress[value] {
 
 
 
-.sphere-video-controls
-{   position:absolute;
-	display:inline;
-	background-color:rgba(0,255,0,.2);
-    bottom:0px;
-	height:70px;
-	width:100%;
-	cursor:pointer;
-  -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-	outline: none;
-	
-}
+
 .fa-volume-off
 {color:white;
 text-shadow: 0px 0px 5px #ffffff;	
@@ -277,6 +238,7 @@ border-radius:12px;
 box-shadow: 0 0 12px #8888;
 -webkit-transition: box-shadow 0.3s ease;
 cursor:pointer;
+
 }
 .ui-slider-handle:hover {
 	box-shadow: 0 0 14px #ffffff;
@@ -379,29 +341,36 @@ margin-left:30px;
   background: #777;
   cursor: pointer;
   height: 3px;
- top:2px;
-  transitionx: 0.1s ease-in;
   width: 100%;
   outline: none;
+  
 }
 
 .range::-webkit-slider-thumb {
   -webkit-appearance: none;
-  background: #aeaeae;
-  border-radius: 8px;
-  box-shadow: inset 0 0 0 5px #eaeaea;
-  height: 10px;;
-  
-   transition: visibility 0s, opacity 2s linear;
-  width: 0;
+  background: #777;
+  border-radius:12px;
+  box-shadow: inset 0 0 0 6px #eaeaea;
 }
-.wrap { display:block;
-    height:10px;
-	width:100%;
-	margin-bottom:15px; }
-.wrap:hover .range::-webkit-slider-thumb,
-.wrap.hover .range::-webkit-slider-thumb {
-  width: 16px;
-  height: 16px;
+.range::-webkit-slider-thumb:hover {
+  -webkit-appearance: none;
+  background: rgb(85, 206, 65);
+  border-radius:12px;
+  box-shadow: inset 0 0 0 6px #eaeaea;
+  -webkit-transition: all 0.3s ease;
+-moz-transition: all 0.3s ease;
+-o-transition: all 0.3s ease;
+-ms-transition: all 0.3s ease;
+
+}
+.wrap{
+	 
+	 top:-20px;
+	}
+
+.range::-webkit-slider-thumb {
+  width: 20px;
+  height: 20px;
+  
 }
 
