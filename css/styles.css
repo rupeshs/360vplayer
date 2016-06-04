@@ -76,41 +76,13 @@ figure {
 {  
 	height:50px;
 	display:flex;
-	 flex-direction: row; 
+	 flex-direction: column; 
 	 align-items: center;
 	 cursor:pointer;
 	 overflow: hidden;
 	 outline: none;
 }
-.controls, .controls li {
-	padding:0;
-	padding-botton:10px;
-	margin:0;
-	display:block;
-	outline: none;
-	
-}
-.controls {
-	-webkit-appearance: none;
-	display:block;
-	list-style-type:none;
-	overflow:hidden;
-	background:transperant;
-	outline: none;
-	padding:2px;
 
-    
-}
-.sphere-video-controls li {
-	display:inline;
-	width:30px;;
-	margin-left:1px;
-	outline: none;
-	
-}
-.controls li:first-child {
-	margin-left:0;
-}
 
 :-webkit-full-screen {
 
