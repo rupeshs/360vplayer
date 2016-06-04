@@ -80,12 +80,14 @@ figure {
 	height:80px;
 	width:100%;
 	cursor:pointer;
+	outline: none;
 }
 .controls, .controls li {
 	padding:0;
 	padding-botton:10px;
 	margin:0;
 	display:block;
+	outline: none;
 	
 }
 .controls {
@@ -93,6 +95,7 @@ figure {
 	list-style-type:none;
 	overflow:hidden;
 	background:transperant;
+	outline: none;
 
     
 }
@@ -100,6 +103,7 @@ figure {
 	display:inline;
 	width:30px;;
 	margin-left:1px;
+	outline: none;
 	
 }
 .controls li:first-child {
