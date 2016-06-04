@@ -292,17 +292,3 @@ function seektimeupdate(){
     );
 }
  
-   $('.wrap').bind('focusin mouseover mousedown hover', function() {
-    window.clearTimeout(timeout);
-    $(this).addClass('hover');
-  });
-  $('.wrap').bind('focusout mouseout mouseup', function() {
-    window.clearTimeout(timeout);
-    timeout = setTimeout(function(){removeHoverClass();}, 1000);
-  });
-  function removeHoverClass() {
-    if (!$('.wrap').is(":hover")) {
-      $('.wrap').removeClass('hover');
-    }
-  }
-  

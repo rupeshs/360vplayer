@@ -3,6 +3,7 @@ body {
 	font-family: 'Titillium Web', sans-serif;
 	overflow-y: hidden;
 	overflow-x: hidden;
+	 
 }
 a {
 	color:rgb(255,255,255);
@@ -20,7 +21,7 @@ figure {
 	width:100%;
     height:auto;
 	margin:0px;
-	bottom: 0px;
+	bottom: -5px;
 	cursor:grabbing;
 	
 }

@@ -99,8 +99,7 @@ function initRenderer() {
 	});
 
 	renderer.setSize(window.innerWidth, window.innerHeight);
-   
-	//attach the render-supplied DOM element
+ 
 	container.append(renderer.domElement);
 	keyboard = new THREEx.KeyboardState(renderer.domElement);
 	renderer.domElement.setAttribute("tabIndex", "0");
