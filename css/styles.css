@@ -1,15 +1,6 @@
-
 body {
-	color:#333;
-	font-family: 'Titillium Web', sans-serif;
-	 -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-	outline: none;
 	
+	font-family: 'Titillium Web', sans-serif;
 	overflow-y: hidden;
 	overflow-x: none;
 }
@@ -22,6 +13,7 @@ a:hover, a:focus {
 	text-decoration:underline;
 }
 figure {
+	
 	left:0px;
     right:0px;
 	position: absolute;
@@ -33,6 +25,49 @@ figure {
 	
 }
 
+#sphere-header
+{
+	position:relative;
+    z-index:5;
+    background:#942911;
+    float:right;
+	top:-6px;
+	left:0px;
+    width : 100%;
+    height : 40px;
+	color:white;
+	background-color:rgba(0,0,0,.2);
+	border-radius: 2px;
+}
+#sphere-about
+{
+	 float:right;
+	 margin-top:5px;
+	 margin-right:10px; 
+}
+#sphere_about_popup
+{
+	border-radius: 6px;
+    box-shadow: 0 0 4px white;
+	border: rgba(255,255,255,.15) solid 8px;
+    background-clip: padding-box;
+	padding:10px;
+	background-color:rgba(0,0,0,.6);
+	color:white;
+	-webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+     transform: scale(0.8);
+
+}
+.popup_visible #sphere_about_popup
+{
+	-webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+     transform: scale(1);
+
+}
 
 /* controls */
 
@@ -40,20 +75,11 @@ figure {
 {  
 	position:absolute;
 	display:inline;
-	background-color:rgba(0,0,0,.2);
+	background-color:rgba(0,0,255,.2);
     bottom:0px;
 	height:80px;
 	width:100%;
 	cursor:pointer;
-	
-  -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-	outline: none;
-	
 }
 .controls, .controls li {
 	padding:0;
@@ -290,51 +316,6 @@ margin-left:30px;
 }
 
 
-#sphere-header
-{
-	position:absolute;
-    z-index:5;
-    background:#942911;
-	 position: relative;
-    float:right;
-	top:-8px;
-	left:0px;
-    width : 100%;
-    height : 40px;
-	color:white;
-	background-color:rgba(0,0,0,.2);
-	border-radius: 2px;
-}
-#sphere-about
-{
-	 float:right;
-	 margin-top:5px;
-	 margin-right:10px;
-	 
-}
-#sphere_about_popup
-{
-	border-radius: 6px;
-    box-shadow: 0 0 4px white;
-	border: rgba(255,255,255,.15) solid 8px;
-    background-clip: padding-box;
-	padding:10px;
-	background-color:rgba(0,0,0,.6);
-	color:white;
-	 -webkit-transform: scale(0.8);
-       -moz-transform: scale(0.8);
-        -ms-transform: scale(0.8);
-            transform: scale(0.8);
-
-}
-.popup_visible #sphere_about_popup
-{
-	-webkit-transform: scale(1);
-       -moz-transform: scale(1);
-        -ms-transform: scale(1);
-            transform: scale(1);
-
-}
 
 .range {
   -webkit-appearance: none;
