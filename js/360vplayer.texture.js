@@ -149,9 +149,11 @@ function loadVideo(murl) {
 	{
 
 		$("#navctrl").css("display", "none");
+
 	}
 	else{
 	
+	    $('#vp360-controls').css("cursor","pointer");
 		var poscy=window.innerHeight -150;
 	$("#navctrl").css("bottom",poscy+ "px");
 		}
