@@ -161,7 +161,7 @@ function loadVideo(murl) {
 
 function handleMouseTouch() {
 	
-	if (mouselY < window.innerHeight - $("#sphere-video-controls-container").height()) {
+	if (mouselY < window.innerHeight - 70) {
 
 
 		if (!lookfirst) {

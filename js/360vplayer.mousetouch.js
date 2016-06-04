@@ -34,9 +34,9 @@ var windowHalfY = window.innerHeight / 4;
 
 var finalRotationY;
 
-//document.addEventListener( 'mousedown', onDocumentMouseDown, false );
-//document.addEventListener( 'touchstart', onDocumentTouchStart, false );
-//document.addEventListener( 'touchmove', onDocumentTouchMove, false );
+document.addEventListener( 'mousedown', onDocumentMouseDown, false );
+document.addEventListener( 'touchstart', onDocumentTouchStart, false );
+document.addEventListener( 'touchmove', onDocumentTouchMove, false );
 
 function onDocumentMouseDown( event ) {
 	renderer.domElement.focus();
@@ -105,7 +105,7 @@ function onDocumentTouchStart(event) {
 }
 
 function onDocumentTouchMove(event) {
-
+        mouselY=event.touches[0].pageY;
         if (event.touches.length == 1) {
 
                 event.preventDefault();
