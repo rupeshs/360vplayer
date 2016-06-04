@@ -79,6 +79,8 @@ figure {
 	 flex-direction: row; 
 	 align-items: center;
 	 cursor:pointer;
+	 overflow: hidden;
+	 outline: none;
 }
 .controls, .controls li {
 	padding:0;
