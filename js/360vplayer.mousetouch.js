@@ -90,7 +90,7 @@ function onDocumentTouchStart(event) {
 
         if (event.touches.length == 1) {
 
-                event.preventDefault();
+              //  event.preventDefault();
 
                 mouseXOnMouseDown = event.touches[0].pageX - windowHalfX;
                 targetRotationOnMouseDownX = targetRotationX;
@@ -108,7 +108,7 @@ function onDocumentTouchMove(event) {
         mouselY=event.touches[0].pageY;
         if (event.touches.length == 1) {
 
-                event.preventDefault();
+                //event.preventDefault();
 
                 mouseX = event.touches[0].pageX - windowHalfX;
                 targetRotationX = targetRotationOnMouseDownX + (mouseX - mouseXOnMouseDown) * 0.002;
