@@ -81,6 +81,7 @@ figure {
 	width:100%;
 	cursor:pointer;
 	outline: none;
+	-webkit-appearance: none;
 }
 .controls, .controls li {
 	padding:0;
@@ -91,11 +92,13 @@ figure {
 	
 }
 .controls {
+	-webkit-appearance: none;
 	display:block;
 	list-style-type:none;
 	overflow:hidden;
 	background:transperant;
 	outline: none;
+	padding:2px;
 
     
 }
