@@ -79,6 +79,7 @@ figure {
 	 flex-direction: row; 
 	 align-items: center;
 	 cursor:pointer;
+	 -webkit-tap-highlight-color:  rgba(255, 255, 255, 0); 
 	
 	 
 }
