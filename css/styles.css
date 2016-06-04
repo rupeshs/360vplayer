@@ -72,15 +72,15 @@ figure {
 
 /* controls */
 
-.360vp-controls
+.vp-controls
 {  
-	height:50px;
-	display:flex;
-	 flex-direction: column; 
+	 height:50px;
+	 display:flex;
+	 flex-direction: row; 
 	 align-items: center;
 	 cursor:pointer;
 	 overflow: hidden;
-	 outline: none;
+	 
 }
 
 
