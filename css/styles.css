@@ -255,6 +255,10 @@ padding:0 10px;
 display:inline-block;
 border-radius: 1px;
 cursor:pointer;
+-webkit-user-select: none;  /* Chrome all / Safari all */
+-moz-user-select: none;     /* Firefox all */
+-ms-user-select: none;      /* IE 10+ */
+user-select: none;          /* Likely future */  
 }
 
 /*Style for the slider button*/
