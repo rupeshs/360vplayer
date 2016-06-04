@@ -74,15 +74,11 @@ figure {
 
 .sphere-video-controls
 {  
-	position:absolute;
-	display:inline;
-	background-color:rgba(0,0,255,.2);
-    bottom:0px;
-	height:80px;
-	width:100%;
-	cursor:pointer;
-	outline: none;
-	-webkit-appearance: none;
+	height:50px;
+	display:flex;
+	 flex-direction: row; 
+	 align-items: center;
+	 cursor:pointer;
 }
 .controls, .controls li {
 	padding:0;
@@ -115,6 +111,7 @@ figure {
 }
 
 :-webkit-full-screen {
+
 	background-color:transparent;
 }
 
@@ -294,8 +291,9 @@ position:absolute;
 }
 #sphere-mute-btn
 {   
-   display:inline-block;
-   
+    
+    
+    margin-left:5px;
 	width:20px;
 	height:20px;;
 	color:black;
@@ -304,27 +302,36 @@ position:absolute;
 }
 #sphere-current-duration
 {
-	display:inline-block;
+	
 	color:white;
+	margin-left:10px;
 	
 	 
 }
 #sphere-total-duration
 {
-	display:inline-block;
+
+	
 	color:white;
+	margin-left:10px;
+	
+
 }
 .sphere-browsefile
 {
-margin-left:30px;
+
+margin-left:10px;
+
 }
 #sphere-playpause-control
 {
-	display:inline-block;
+	margin-left:10px;
+	
 }
 #sphere-fullscreen
 {
-	display:inline-block;
+	margin-left: auto;
+	margin-right:10px;
 }
 
 
@@ -335,6 +342,7 @@ margin-left:30px;
   cursor: pointer;
   height: 3px;
   width: 100%;
+
   outline: none;
   
 }
@@ -357,9 +365,9 @@ margin-left:30px;
 
 }
 .wrap{
-	margin-top:-5px;
-	 padding:0;
-	 top:-10px;
+	 height: 22px;
+	
+	 
 	}
 
 .range::-webkit-slider-thumb {
