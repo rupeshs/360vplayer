@@ -44,7 +44,7 @@ figure {
 	 float:right;
 	 margin-top:5px;
 	 margin-right:10px; 
-}
+	 }
 #sphere_about_popup
 {
 	border-radius: 6px;
@@ -304,9 +304,9 @@ position:absolute;
 	
 	 
 }
-.controls #sphere-total-duration
+#sphere-total-duration
 {
-	display:inline-table;
+	display:inline-block;
 	color:white;
 }
 .sphere-browsefile
