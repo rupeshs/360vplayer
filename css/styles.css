@@ -275,7 +275,7 @@ border-radius:12px;
 box-shadow: 0 0 12px #8888;
 -webkit-transition: box-shadow 0.3s ease;
 cursor:pointer;
-
+outline:none;
 }
 .ui-slider-handle:hover {
 	box-shadow: 0 0 14px #ffffff;
