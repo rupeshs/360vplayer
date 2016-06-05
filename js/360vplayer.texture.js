@@ -157,11 +157,12 @@ function loadVideo(murl) {
 		var poscy=window.innerHeight -150;
 	$("#navctrl").css("bottom",poscy+ "px");
 		}
+		
 }
 
 function handleMouseTouch() {
 	
-	if (mouselY < window.innerHeight - 100) {
+	if (mouselY < window.innerHeight - 80) {
 
 
 		if (!lookfirst) {

@@ -207,12 +207,12 @@ input#fileBrowser {
 /*the slider background*/
 
 .sphere-volume-control {
-width:50px;
+width:60px;
 height:8px;
 background-color: rgba(19, 19, 19, 0.9);
 border:1px solid rgba(255,255,255,0.3);
 position:relative;
-margin-left:5px;
+margin-left:15px;
 padding:0 10px;
 display:inline-block;
 border-radius: 1px;
