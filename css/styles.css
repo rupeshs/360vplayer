@@ -216,7 +216,7 @@ margin-left:5px;
 padding:0 10px;
 display:inline-block;
 border-radius: 1px;
-cursor:pointer;
+
 -webkit-user-select: none;  /* Chrome all / Safari all */
 -moz-user-select: none;     /* Firefox all */
 -ms-user-select: none;      /* IE 10+ */
@@ -236,7 +236,7 @@ background-color:white;
 border-radius:12px;
 box-shadow: 0 0 12px #8888;
 -webkit-transition: box-shadow 0.3s ease;
-cursor:pointer;
+
 outline:none;
 }
 .ui-slider-handle:hover {
@@ -267,12 +267,15 @@ position:absolute;
 {
 	color:white;
 	margin-left:10px;
+	 white-space: nowrap; 
 }
 #sphere-total-duration
 {
 	color:white;
 	margin-left:10px;
+	 white-space: nowrap; 
 	
+	margin-right:10px;
 }
 .sphere-browsefile
 {
