@@ -37,7 +37,7 @@ var videoContainer;
 	videoControls = document.getElementById('video-controls');
     seekbar.addEventListener("change",vidSeek,false);
 	video.addEventListener("timeupdate",seektimeupdate,false);  
-	  }
+	}
 
  
  var load360Video=function(){
@@ -128,6 +128,12 @@ var videoContainer;
    		});
 
    		// Add events for all buttons
+		video.onwaiting = function() {
+         $(".sphere-buffering-spinner").fadeIn();
+          };
+		  video.onplaying = function() {
+          $(".sphere-buffering-spinner").fadeOut();
+          };
    		$("#sphere-playpause-control").click(function (event) {
    			if (video.paused || video.ended) 
 			{   

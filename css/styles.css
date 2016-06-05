@@ -3,7 +3,10 @@ body {
 	font-family: 'Titillium Web', sans-serif;
 	overflow-y: hidden;
 	overflow-x: hidden;
-	 
+	 -webkit-user-select: none;  /* Chrome all / Safari all */
+     -moz-user-select: none;     /* Firefox all */
+     -ms-user-select: none;      /* IE 10+ */
+     user-select: none;          /* Likely future */  
 }
 a {
 	color:rgb(255,255,255);
@@ -78,21 +81,12 @@ figure {
 	 display:flex;
 	 flex-direction: row; 
 	 align-items: center;
-
-	
-	 
 }
-
 
 :-webkit-full-screen {
 
 	background-color:transparent;
 }
-
-
-
-
-
 .fa-volume-off
 {color:white;
 text-shadow: 0px 0px 5px #ffffff;	
@@ -134,12 +128,10 @@ text-shadow: 0px 0px 1px #ffffff;
 .fa-folder-open:hover
 {
 	color:white;
-	
 }
 .fa-pause-circle
 {
 	color:white;
-	
 }
 .fa-pause-circle:hover
 {
@@ -153,9 +145,7 @@ text-shadow: 0px 0px 10px #ffffff;
 
 .fa-info-circle
 {
-	
-	text-shadow: 0px 0px 2px #888;
-	
+ text-shadow: 0px 0px 2px #888;
 }
 .fa-info-circle:hover
 {
@@ -265,47 +255,37 @@ position:absolute;
 }
 #sphere-mute-btn
 {   
-    
-    
     margin-left:5px;
 	width:20px;
 	height:20px;;
 	color:black;
 	background:url(../images/volume.png) no-repeat;
 	background-position:0 -50px;
+	
 }
 #sphere-current-duration
 {
-	
 	color:white;
 	margin-left:10px;
-	
-	 
 }
 #sphere-total-duration
 {
-
-	
 	color:white;
 	margin-left:10px;
 	
-
 }
 .sphere-browsefile
 {
-
-margin-left:10px;
-
+ margin-left:10px;
 }
 #sphere-playpause-control
 {
-	margin-left:10px;
-	
+  margin-left:10px;
 }
 #sphere-fullscreen
 {
-	margin-left: auto;
-	margin-right:10px;
+margin-left: auto;
+margin-right:10px;
 }
 
 
@@ -350,3 +330,38 @@ margin-left:10px;
   
 }
 
+.sphere-buffering-spinner {
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   height:32px;
+   width:32px;
+   margin:0px auto;
+   -webkit-animation: rotation 1s infinite linear;
+   -moz-animation: rotation 1s infinite linear;
+   -o-animation: rotation 1s infinite linear;
+   animation: rotation 1s infinite linear;
+   border-left:6px solid rgba(255,255,255,.35);
+   border-right:6px solid rgba(255,255,255,.35);
+   border-bottom:6px solid rgba(255,255,255,.35);
+   border-top:6px solid rgba(255,255,255,.8);
+   border-radius:100%;
+   display:none;
+}
+
+@-webkit-keyframes rotation {
+   from {-webkit-transform: rotate(0deg);}
+   to {-webkit-transform: rotate(359deg);}
+}
+@-moz-keyframes rotation {
+   from {-moz-transform: rotate(0deg);}
+   to {-moz-transform: rotate(359deg);}
+}
+@-o-keyframes rotation {
+   from {-o-transform: rotate(0deg);}
+   to {-o-transform: rotate(359deg);}
+}
+@keyframes rotation {
+   from {transform: rotate(0deg);}
+   to {transform: rotate(359deg);}
+}

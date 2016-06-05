@@ -41,7 +41,7 @@ document.addEventListener( 'touchmove', onDocumentTouchMove, false );
 function onDocumentMouseDown( event ) {
 	renderer.domElement.focus();
 	lookfirst=false;
-   event.preventDefault();
+   //event.preventDefault();
  $('html,body').css('cursor','-webkit-grabbing');
         document.addEventListener( 'mousemove', onDocumentMouseMove, false );
         document.addEventListener( 'mouseup', onDocumentMouseUp, false );
