@@ -22,7 +22,9 @@ var fullscreen;
 var timelabel;
 var timeduration;
 var videoContainer;
+var buffer_prgress;
   function initControls(){
+   draw_buffer_prgress=0;
 	 playpause = document.getElementById('sphere-playpause-control');
    	stop = document.getElementById('stop');
    	mute = document.getElementById('sphere-mute-btn');
@@ -36,7 +38,22 @@ var videoContainer;
 	videoContainer = document.getElementById('videoContainer');
 	videoControls = document.getElementById('video-controls');
     seekbar.addEventListener("change",vidSeek,false);
-	video.addEventListener("timeupdate",seektimeupdate,false);  
+	video.addEventListener("timeupdate",seektimeupdate,false);
+	video.addEventListener('progress', function() {
+   
+   if (video.buffered.length>0)
+   {var bufferedEnd = video.buffered.end(video.buffered.length - 1);
+    var duration =  video.duration;
+    if (duration > 0) {
+     buffer_prgress = ((bufferedEnd / duration)*100) + "%";
+	 //console.log(buffer_prgress);
+	}
+    drawSeekBar();
+	}
+
+
+    
+});
 	}
 
  
@@ -292,9 +309,39 @@ function seektimeupdate(){
 
 	var nt = video.currentTime * (100 / video.duration);
 	seekbar.value = nt;
-	$('.range').css(
+	drawSeekBar()
+	/*$('.range').css(
       'background',
       'linear-gradient(to right, rgb(36, 199, 84) 0%, rgb(85, 206, 65) ' + seekbar.value + '%, #777 ' + seekbar.value + '%, #777 ' 
-    );
+    );*/
+	
 }
+ function drawSeekBar()
+ {
  
+  
+      
+	  var  draw_buffer_prgress=0;
+	  var  draw_seekbar_bg=0;
+	  if (buffer_prgress>seekbar.value)
+	  {
+	   draw_buffer_prgress=parseInt(buffer_prgress)-seekbar.value;
+	   //console.log("pag "+draw_buffer_prgress);
+	   draw_seekbar_bg=parseInt(buffer_prgress);
+      //console.log("pag "+draw_buffer_prgress);
+	  }
+	  else{
+		 draw_buffer_prgress= seekbar.value;
+		 draw_seekbar_bg=seekbar.value;
+		  }
+	  console.log(seekbar.value,draw_buffer_prgress,draw_seekbar_bg)
+	$('.range').css(
+      'background',
+      'linear-gradient( to right,' +
+	  'rgb(85, 206, 65) 0%,'+
+	  'rgb(85, 206, 65) '+ seekbar.value+'%,'+
+	  'rgba(255, 255, 255,0.6) '+seekbar.value+ '%,'+
+	  'rgba(255, 255, 255,0.6) '+draw_buffer_prgress+ '%,'+
+	  'rgba(0, 0, 0,0.5) '+parseInt(buffer_prgress)+ '%)'
+    ); 
+}
