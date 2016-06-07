@@ -354,7 +354,7 @@ function seektimeupdate(){
       'background',
       'linear-gradient( to right,' +
 	  'rgb(85, 206, 65) 0%,'+
-	  'rgba(255, 255, 255,0.6) '+seekbar.value+ '%,'+
+	  'rgb(85, 206, 65) '+seekbar.value+ '%,'+
 	  'rgba(255, 255, 255,0.2) '+seekbar.value+ '%)'
        ); 
      }
