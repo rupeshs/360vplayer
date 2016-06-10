@@ -64,8 +64,8 @@ if (!lookfirst)
         mouseY = event.clientY - windowHalfY;
 
 
-        targetRotationY = targetRotationOnMouseDownY + (mouseY - mouseYOnMouseDown) * 0.002;
-        targetRotationX = targetRotationOnMouseDownX + (mouseX - mouseXOnMouseDown) * 0.002;
+        targetRotationY = targetRotationOnMouseDownY + (mouseY - mouseYOnMouseDown) * 0.008;
+        targetRotationX = targetRotationOnMouseDownX + (mouseX - mouseXOnMouseDown) * 0.008;
  }
 }
 
@@ -111,10 +111,10 @@ function onDocumentTouchMove(event) {
                 //event.preventDefault();
 
                 mouseX = event.touches[0].pageX - windowHalfX;
-                targetRotationX = targetRotationOnMouseDownX + (mouseX - mouseXOnMouseDown) * 0.002;
+                targetRotationX = targetRotationOnMouseDownX + (mouseX - mouseXOnMouseDown) * 0.008;
 
                 mouseY = event.touches[0].pageY - windowHalfY;
-                targetRotationY = targetRotationOnMouseDownY + (mouseY - mouseYOnMouseDown) * 0.002;
+                targetRotationY = targetRotationOnMouseDownY + (mouseY - mouseYOnMouseDown) * 0.008;
 
         }
 
