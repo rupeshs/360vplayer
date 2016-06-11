@@ -64,8 +64,8 @@ if (!lookfirst)
         mouseY = event.clientY - windowHalfY;
 
 
-        targetRotationY = targetRotationOnMouseDownY + (mouseY - mouseYOnMouseDown) * 0.008;
-        targetRotationX = targetRotationOnMouseDownX + (mouseX - mouseXOnMouseDown) * 0.008;
+        targetRotationY = targetRotationOnMouseDownY + (mouseY - mouseYOnMouseDown) * 0.005;
+        targetRotationX = targetRotationOnMouseDownX + (mouseX - mouseXOnMouseDown) * 0.005;
  }
 }
 

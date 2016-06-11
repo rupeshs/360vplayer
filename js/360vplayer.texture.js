@@ -25,11 +25,19 @@ var videotexture;
 var pct;
 var container;
 var md;
+var isChrome; 
 $(document).ready(function () {
 	
+	isChrome= /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor); 
+	//alert(isChrome);
+	NProgress.start();
 	pct = 1;
 	//init about popup
 	$('#sphere_about_popup').popup({
+		opacity: 0.3,
+		transition: 'all 0.3s'
+	});
+	$('#sphere_chrome_check').popup({
 		opacity: 0.3,
 		transition: 'all 0.3s'
 	});
@@ -42,10 +50,12 @@ $(document).ready(function () {
 
     video = document.createElement('video');
 	container = $('#videoContainer');
-	
-	initControls();
+	if (isChrome)
+	{
+    
+    initControls();
 	loadVideo("video/spacex-rocket-landing.mkv");
-
+	video.poster="images/poster.jpg"
 	updateFcts.push(
 		function (delta, now) {
 	 
@@ -77,7 +87,15 @@ $(document).ready(function () {
 			updateFn(deltaMsec/1000, nowMsec/1000)
 		})
 	})
-	
+	$("#navcddtrl").fadeIn('slow');
+	}
+	else{
+		$('#sphere_chrome_check').popup('show');
+		
+		}
+	NProgress.done() ;
+	 
+
 });
 
 function createScene()
@@ -118,7 +136,7 @@ function loadVideo(murl) {
 	lookfirst = true;
 	
 	//var fileURL = URL.createObjectURL(url)
-	var url = 'spacex.mkv'
+	//var url = 'spacex.mkv'
 	
 	//create the videoTexture
 	video.controls = false;

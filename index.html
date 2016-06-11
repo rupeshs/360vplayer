@@ -4,7 +4,13 @@
 	<meta charset="utf-8" />
 	<title>360VPlayer</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <link rel=icon type=image/x-icon href="/favicon.ico"/>
+    <meta property="og:url"  content="http://www.360vplayer.org" />
+    <meta property="og:type"   content="website" />
+    <meta property="og:site_name"  content="360VPlayer" />
+    <meta property="og:description" content="Plays 360 degree/spherical video files" />
+    <meta property="og:image" content="http://360vplayer.org/images/360vplayer-fb.png.jpg" />
+	<link rel=icon type=image/x-icon href="/favicon.ico"/>
+	<link rel="stylesheet" href="css/nprogress.css" />
 	<link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.0/css/font-awesome.min.css"> 
 	<link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,700' rel='stylesheet' type='text/css'>
@@ -14,9 +20,11 @@
 	
 	<div id="sphere-header"><span style="text-shadow: 0px 0px 5px #ffffff;	 margin-left:10px;line-height:40px;">360VPlayer </span>
 	<div id="sphere-about" class="sphere_about_popup_open"><i class="fa fa-info-circle fa-2x" ></i></div>
-	
 		</div>
-		 <div id="sphere_about_popup" style="display:none">
+		 <div id="sphere_chrome_check" style="display:none">	
+    <h3 style="color:white;">Please use Google Chrome to use 360VPlayer </h3>
+  </div>
+	<div id="sphere_about_popup" style="display:none">
 		
 		
     <div style="text-align:center"><img src="images/360vplayer-logo.png"/></div>
@@ -36,11 +44,11 @@
   </svg>
 </div> 
   <div class="sphere-buffering-spinner"></div>
- <div id="navcddtrl" style="z-index:100;position:absolute;bottom:0px;width:100%;height:80px;background-color:rgba(0,0,0,0.2);">
+ <div id="navcddtrl" style="display:none;z-index:100;position:absolute;bottom:0px;width:100%;height:80px;background-color:rgba(0,0,0,0.2);">
  
  <div class="wrap">
-	
-	 <input type="range" class="range" id="sphere-seek-ctrl" style="display:inline-block;width:100%;margin-bottom:15px;"  min="0" max="100" step="1" value="0" /></div>
+	 <input type="range" class="range" id="sphere-seek-ctrl" style="display:inline-block;width:100%;margin-bottom:15px;"  min="0" max="100" step="1" value="0" />
+</div>
 <div id="vp360-controls" class="vp-controls">	
  <a id="browsefile" class="sphere-browsefile"><i id="browser" class="fa fa-folder-open fa-2x" aria-hidden="true"></i></i><input type="file" id="fileBrowser"></a>
 	
@@ -54,12 +62,9 @@
 
   <div id="sphere-fullscreen" > <i class="fa fa-arrows-alt fa-2x" aria-hidden="true"></i></div>	
 </div>
-
- 
-	 
-					 </div>
-    	
+</div>  	
 </figure>
+    <script src='js/nprogress.js'></script>
      <script src='js/three.min.js'></script>
      <script src='js/stats.min.js'></script>
      <script src="js/threex.keyboardstate.js"></script>

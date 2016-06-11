@@ -12,7 +12,7 @@
     along with this program; if not, write to the Free Software
     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 */
-
+"use strict";
 var playpause;
 var stop;
 var mute;
@@ -23,18 +23,17 @@ var timelabel;
 var timeduration;
 var videoContainer;
 var buffer_progress;
-  function initControls(){
-   draw_buffer_prgress=0;
-	 playpause = document.getElementById('sphere-playpause-control');
-   	stop = document.getElementById('stop');
+var seekbar;
+var videoControls;
+function initControls(){
+    buffer_progress=0;
+	playpause = document.getElementById('sphere-playpause-control');
    	mute = document.getElementById('sphere-mute-btn');
-   	
-   	seekbar = document.getElementById('sphere-seek-ctrl');
     progressBar = document.getElementById('progress-bar');
-   	fullscreen = document.getElementById('sphere-fullscreen');
-    timelabel=document.getElementById("sphere-current-duration");
+	timelabel=document.getElementById("sphere-current-duration");
     timeduration=document.getElementById("sphere-total-duration");
-	
+   	fullscreen = document.getElementById("sphere-fullscreen");
+	seekbar = document.getElementById("sphere-seek-ctrl");
 	videoContainer = document.getElementById('videoContainer');
 	videoControls = document.getElementById('video-controls');
     seekbar.addEventListener("change",vidSeek,false);
@@ -43,27 +42,21 @@ var buffer_progress;
  
    if (video.buffered.length>0)
    {var bufferedEnd = video.buffered.end(video.buffered.length - 1);
-      console.log(bufferedEnd,video.buffered.length);
+      //console.log(bufferedEnd,video.buffered.length);
 	var duration =  video.duration;
     if (duration > 0) {
      buffer_progress = ((bufferedEnd / duration)*100) + "%";
 	 //console.log(buffer_prgress);
 	}
     drawSeekBar();
-	}
-
-
-    
+	}  
 });
-	}
 
- 
+}
+
  var load360Video=function(){
- 
-	// Check if the browser supports the Fullscreen API
     var fullScreenEnabled = !!(document.fullscreenEnabled || document.mozFullScreenEnabled || document.msFullscreenEnabled || document.webkitSupportsFullscreen || document.webkitFullscreenEnabled || document.createElement('video').webkitRequestFullScreen);
-    // If the browser doesn't support the Fulscreen API then hide the fullscreen button
-    
+     
     if (!fullScreenEnabled) {
 
       fullscreen.style.display = 'none';
@@ -97,10 +90,10 @@ var buffer_progress;
 
    	// Fullscreen
    	var handleFullscreen = function() {
-   		// If fullscreen mode is active...	
+   		   // If fullscreen mode is active...	
     		if (isFullScreen()) {
     			// ...exit fullscreen mode
-    			// (Note: this can only be called on document)
+
     			if (document.exitFullscreen) document.exitFullscreen();
     			else if (document.mozCancelFullScreen) document.mozCancelFullScreen();
     			else if (document.webkitCancelFullScreen) document.webkitCancelFullScreen();
@@ -110,8 +103,7 @@ var buffer_progress;
 				
     		}
     		else {
-    		  // ...otherwise enter fullscreen mode
-    			// (Note: can be called on document, but here the specific element is used as it will also ensure that the element's children, e.g. the custom controls, go fullscreen also)
+    	
           if (videoContainer.requestFullscreen) videoContainer.requestFullscreen();
     		  else if (videoContainer.mozRequestFullScreen) videoContainer.mozRequestFullScreen();
     		  else if (videoContainer.webkitRequestFullScreen) {
@@ -173,12 +165,7 @@ var buffer_progress;
 				video.pause();}
    		});
 
-   		// The Media API has no 'stop()' function, so pause the video and reset its time and the progress bar
-   		/*stop.addEventListener('click', function(e) {
-   			video.pause();
-   			video.currentTime = 0;
-   			progress.value = 0;
-   		});*/
+   		
    		mute.addEventListener('click', function(e) {
    			var volume = $('#sphere-mute-btn');
 			if (!video.muted)
@@ -213,26 +200,6 @@ var buffer_progress;
    		fullscreen.addEventListener('click', function(e) {
    			handleFullscreen();
    		});
-
-   		// As the video is playing, update the progress bar
-   		/*video.addEventListener('timeupdate', function() {
-        
-		
-		//
-		// For mobile browsers, ensure that the progress element's max attribute is set
-        if (!progress.getAttribute('max')) progress.setAttribute('max', video.duration);
-        timelabel.innerHTML=secondsToTime(video.currentTime);
-		timeduration.innerHTML="/ "+secondsToTime(video.duration);
-		//progress.value = video.currentTime;
-		progress.setAttribute('value',video.currentTime);
-      //  progressBar.style.width = Math.floor((video.currentTime / video.duration) * 100) + '%';
-   		});
-
-      // React to the user clicking within the progress bar
-      progress.addEventListener('click', function(e) {
-        var pos = (e.pageX  - this.offsetLeft) / this.offsetWidth;
-        video.currentTime = pos * video.duration;
-		});*/
 
    		// Listen for fullscreen change events (from other controls, e.g. right clicking on the video itself)
    		document.addEventListener('fullscreenchange', function(e) {
@@ -311,17 +278,11 @@ function seektimeupdate(){
 	var nt = video.currentTime * (100 / video.duration);
 	seekbar.value = nt;
 	drawSeekBar()
-	/*$('.range').css(
-      'background',
-      'linear-gradient(to right, rgb(36, 199, 84) 0%, rgb(85, 206, 65) ' + seekbar.value + '%, #777 ' + seekbar.value + '%, #777 ' 
-    );*/
 	
 }
  function drawSeekBar()
  {
- 
-  
-      
+
 	  var  draw_buffer_prgress=0;
 	  var  draw_seekbar_bg=0;
 	  if (buffer_progress>seekbar.value)
@@ -335,7 +296,7 @@ function seektimeupdate(){
 		 draw_buffer_prgress= seekbar.value;
 		 draw_seekbar_bg=seekbar.value;
 		  }
-	  console.log(seekbar.value,buffer_progress)
+	  //console.log(seekbar.value,buffer_progress)
 	  if (parseInt(buffer_progress)>seekbar.value)
 	  {
   $('.range').css(
