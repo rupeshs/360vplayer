@@ -95,6 +95,8 @@ $(document).ready(function () {
 	$('#sphere_splash_popup').popup('show');
 	}
 	else{
+	    $('#vtitle').html("Please use Chrome");
+		$('#vtitle').css('backgroundColor','rgba(255,0,0,.5)');
 		$('#sphere_chrome_check').popup('show');
 		
 		}
@@ -175,7 +177,7 @@ function loadVideo(murl) {
 
 	}
 	else{
-	
+	    $("#navctrl").fadeIn();
 	    $('#vp360-controls').css("cursor","pointer");
 		var poscy=window.innerHeight -150;
 	$("#navctrl").css("bottom",poscy+ "px");
