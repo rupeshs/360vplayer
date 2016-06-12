@@ -95,8 +95,7 @@ $(document).ready(function () {
 	$('#sphere_splash_popup').popup('show');
 	}
 	else{
-	    $('#vtitle').html("Please use Chrome");
-		$('#vtitle').css('backgroundColor','rgba(255,0,0,.5)');
+	  
 		$('#sphere_chrome_check').popup('show');
 		
 		}

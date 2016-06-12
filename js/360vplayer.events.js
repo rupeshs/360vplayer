@@ -76,13 +76,7 @@ function initControls(){
     function setVolume(val) {
    		video.volume=val/100;
    	}
-   	// Set the video container's fullscreen state
-  	var setFullscreenData = function(state) {
-  
-      
-  		//videoContainer.setAttribute('data-fullscreen', !!state);
-  	}
-
+   	
   	// Checks if the document is currently in fullscreen mode
    	var isFullScreen = function() {
    		return !!(document.fullScreen || document.webkitIsFullScreen || document.mozFullScreen || document.msFullscreenElement || document.fullscreenElement);
