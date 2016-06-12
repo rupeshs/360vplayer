@@ -28,7 +28,7 @@ var md;
 var isChrome; 
 $(document).ready(function () {
 	
-	isChrome= /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor); 
+	isChrome= bowser.chrome; 
 	//alert(isChrome);
 	NProgress.start();
 	pct = 1;
