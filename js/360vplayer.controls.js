@@ -25,13 +25,17 @@ $(".sphere-volume-control").slider({
 
 
 	change: function (event, ui) {
-
+         
 		var value = ui.value,
 		volume = $('#sphere-mute-btn');
 					
 		 //setVolume(value);
 		 video.volume = value / 100;
-
+         if (value>0)
+		 {
+	         
+			 video.muted = false;
+		 }
 		if (value <= 5) {
 
 			volume.css('background-position', '0 0');
