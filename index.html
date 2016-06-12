@@ -4,7 +4,10 @@
 	<meta charset="utf-8" />
 	<title>360VPlayer</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <meta property="og:url"  content="http://www.360vplayer.org" />
+    <meta name="description" content="Plays 360 degree/spherical video files">
+    <meta name="author" content="Rupesh Sreeraman">
+	<meta name=Keywords content=",360vplayer,360video,360videoplayer,spherical,sphericalvideo,immersive,video" />
+	<meta property="og:url"  content="http://www.360vplayer.org" />
     <meta property="og:type"   content="website" />
     <meta property="og:site_name"  content="360VPlayer" />
     <meta property="og:description" content="Plays 360 degree/spherical video files" />
@@ -25,14 +28,20 @@
     <h3 style="color:white;">Please use Google Chrome to use 360VPlayer </h3>
   </div>
 	<div id="sphere_about_popup" style="display:none">
-		
-		
     <div style="text-align:center"><img src="images/360vplayer-logo.png"/></div>
 	Plays 360 degree/spherical video files<br>
-    © 2016 <a href=https://github.com/rupeshs>Rupesh Sreeraman</a><br> 
-    <i class="fa fa-mouse-pointer" aria-hidden="true"></i> Drag mouse to control camera <br>
+    © 2016 <a href="https://github.com/rupeshs" target="blank">Rupesh Sreeraman</a><br> 
+    <i class="fa fa-github" aria-hidden="true"></i> <a href="https://github.com/rupeshs/360vplayer" target="blank" >Fork me on Github</a> <br>
+	<i class="fa fa-mouse-pointer" aria-hidden="true"></i> Drag mouse to control camera <br>
 	<i class="fa fa-keyboard-o" aria-hidden="true"></i> Keyboard controls(desktop only):LEFT/RIGHT/UP/DOWN <br>
   </div>
+  <div id="sphere_splash_popup" style="display:none">
+    <div style="text-align:center"><img src="images/360vplayer-logo.png"/></div>
+	<span style="font-size:20px;">Play your 360 degree/spherical video files<br>
+      Try this demo 360 Video - SpaceX rocket landing<br>
+	  <i class="fa fa-mouse-pointer" aria-hidden="true"></i> Drag mouse/Swipe to control camera <br>
+	  <span>
+ </div>
  <figure id="videoContainer"> 
   <div id="navctrl" class="ytp-webgl-spherical-control"  data-layer="3" style="touch-action: none;" draggable="true" >
  <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100" height="100" viewBox="0 0 100 100">
@@ -50,16 +59,12 @@
 	 <input type="range" class="range" id="sphere-seek-ctrl" style="display:inline-block;width:100%;margin-bottom:15px;"  min="0" max="100" step="1" value="0" />
 </div>
 <div id="vp360-controls" class="vp-controls">	
- <a id="browsefile" class="sphere-browsefile"><i id="browser" class="fa fa-folder-open fa-2x" aria-hidden="true"></i></i><input type="file" id="fileBrowser"></a>
-	
- <div id="sphere-playpause-control"><i class="fa fa-play-circle fa-2x" aria-hidden="true"></i></div>
-
- 
- <div id="sphere-volume-ctrl"  class="sphere-volume-control"></div>
- <div id="sphere-mute-btn"></div>
+  <a id="browsefile" class="sphere-browsefile"><i id="browser" class="fa fa-folder-open fa-2x" aria-hidden="true"></i></i><input type="file" id="fileBrowser"></a>
+  <div id="sphere-playpause-control"><i class="fa fa-play-circle fa-2x" aria-hidden="true"></i></div>
+  <div id="sphere-volume-ctrl"  class="sphere-volume-control"></div>
+  <div id="sphere-mute-btn"></div>
   <div id="sphere-current-duration" ></div>
- <div id="sphere-total-duration" ></div>
-
+  <div id="sphere-total-duration" ></div>
   <div id="sphere-fullscreen" > <i class="fa fa-arrows-alt fa-2x" aria-hidden="true"></i></div>	
 </div>
 </div>  	

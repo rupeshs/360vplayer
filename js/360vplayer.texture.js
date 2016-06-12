@@ -41,6 +41,10 @@ $(document).ready(function () {
 		opacity: 0.3,
 		transition: 'all 0.3s'
 	});
+	$('#sphere_splash_popup').popup({
+		opacity: 0.3,
+		transition: 'all 0.3s'
+	});
     //browser dection
 	md = new MobileDetect(window.navigator.userAgent);
 
@@ -88,6 +92,7 @@ $(document).ready(function () {
 		})
 	})
 	$("#navcddtrl").fadeIn('slow');
+	$('#sphere_splash_popup').popup('show');
 	}
 	else{
 		$('#sphere_chrome_check').popup('show');

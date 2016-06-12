@@ -79,6 +79,21 @@ figure {
      transform: scale(0.8);
 
 }
+#sphere_splash_popup
+{
+	border-radius: 6px;
+    box-shadow: 0 0 4px white;
+	border: rgba(255,255,255,.25) solid 8px;
+    background-clip: padding-box;
+	padding:10px;
+	background-color:#280840;
+	color:white;
+	-webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+     transform: scale(0.8);
+
+}
 .popup_visible #sphere_about_popup
 {
 	-webkit-transform: scale(1);
@@ -350,7 +365,7 @@ margin-right:10px;
 }
 
 .sphere-buffering-spinner {
-   position:absolute;
+   position:fixed;
    left: 50%;
    top: 50%;
    height:32px;
