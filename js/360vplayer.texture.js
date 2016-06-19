@@ -132,6 +132,7 @@ function initRenderer() {
 }
 
 function loadVideo(murl) {
+	
 	//Init scene
 	createScene();
 	//Init camera
@@ -152,7 +153,8 @@ function loadVideo(murl) {
 	video.loop	= false;
 	video.src	= murl;
     videotexture	= new THREE.Texture( video );
-
+	buffer_progress=0;
+    seekbar.value=0;
    if (pct==1)
    {
 	   load360Video();
