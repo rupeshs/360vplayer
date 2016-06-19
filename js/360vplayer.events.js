@@ -36,10 +36,11 @@ function initControls(){
 	seekbar = document.getElementById("sphere-seek-ctrl");
 	videoContainer = document.getElementById('videoContainer');
 	videoControls = document.getElementById('video-controls');
+	video.addEventListener('error',failed,false);
     seekbar.addEventListener("change",vidSeek,false);
 	video.addEventListener("timeupdate",seektimeupdate,false);
 	video.addEventListener('progress', function() {
- 
+    
    if (video.buffered.length>0)
    {var bufferedEnd = video.buffered.end(video.buffered.length - 1);
       //console.log(bufferedEnd,video.buffered.length);
@@ -313,4 +314,21 @@ function seektimeupdate(){
 	  'rgba(255, 255, 255,0.2) '+seekbar.value+ '%)'
        ); 
      }
+}
+function failed(e) {
+   // video playback failed - show a message saying why
+   switch (e.target.error.code) {
+     case e.target.error.MEDIA_ERR_NETWORK:
+       alert('A network error caused the video download to fail part-way.');
+       break;
+     case e.target.error.MEDIA_ERR_DECODE:
+       alert('The video playback was aborted due to a corruption problem or because the video used features your browser did not support.');
+       break;
+     case e.target.error.MEDIA_ERR_SRC_NOT_SUPPORTED:
+       alert('The video could not be loaded, either because the server or network failed or because the format is not supported.');
+       break;
+     default:
+       alert('An unknown error occurred.');
+       break;
+   }
 }
